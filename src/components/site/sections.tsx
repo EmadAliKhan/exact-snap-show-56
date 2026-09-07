@@ -313,31 +313,60 @@ export function Companies() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {partners.map((p, i) => (
             <Reveal key={p.name} delay={(i % 3) * 100}>
-              <article className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur">
-                <div className="flex items-center gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
-                    {p.initials}
-                  </span>
-                  <div>
-                    <h3 className="text-base font-semibold">{p.name}</h3>
-                    <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                      {p.category}
+              {p.featured ? (
+                <article className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Flagship Partner</FeaturedBadge>
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
+                      {p.initials}
                     </span>
+                    <div>
+                      <h3 className="text-base font-semibold">{p.name}</h3>
+                      <span className="text-xs font-medium uppercase tracking-wider text-primary">
+                        {p.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {p.description}
-                </p>
-                <a
-                  href={`https://${p.site}`}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
-                >
-                  Visit Website
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-              </article>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70">
+                    {p.description}
+                  </p>
+                  <a
+                    href={`https://${p.site}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    Visit Website
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                </article>
+              ) : (
+                <article className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur">
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
+                      {p.initials}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-semibold">{p.name}</h3>
+                      <span className="text-xs font-medium uppercase tracking-wider text-primary">
+                        {p.category}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {p.description}
+                  </p>
+                  <a
+                    href={`https://${p.site}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    Visit Website
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
