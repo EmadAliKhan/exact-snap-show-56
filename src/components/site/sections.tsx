@@ -84,7 +84,7 @@ export function Hero() {
 
 const stats = [
   { icon: "Rocket", value: 500, suffix: "+", label: "Projects Delivered" },
-  { icon: "HeartHandshake", value: 200, suffix: "+", label: "Happy Clients" },
+  { icon: "HeartHandshake", value: 20, suffix: "k+", label: "Happy Clients" },
   { icon: "Users", value: 150, suffix: "+", label: "Team Experts" },
   { icon: "CalendarClock", value: 20, suffix: "+", label: "Years Experience" },
 ];
