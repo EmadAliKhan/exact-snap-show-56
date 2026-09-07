@@ -189,32 +189,62 @@ export function Solutions() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map((s, i) => (
             <Reveal key={s.title} delay={(i % 4) * 80}>
-              <a
-                href="#contact"
-                className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur"
-              >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
-                  <Icon name={s.icon} className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {s.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {s.description}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  Talk to us
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </a>
+              {s.featured ? (
+                <a
+                  href="#contact"
+                  className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4"
+                >
+                  <FeaturedBadge>Core Solution</FeaturedBadge>
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={s.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-white/70">
+                    {s.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    Talk to us
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              ) : (
+                <a
+                  href="#contact"
+                  className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur"
+                >
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={s.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {s.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    Talk to us
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              )}
             </Reveal>
           ))}
         </div>
