@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, Sparkles } from "lucide-react";
 import { CountUp, Icon, Reveal, SectionHeading } from "./primitives";
-import { HeroBackdrop } from "@/components/site/hero-backdrop";
+import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import logo from "@/assets/ary-services-logo-light.png.asset.json";
 import {
   designServices,
