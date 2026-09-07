@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/ary-services-logo.webp.asset.json";
+import logo from "@/assets/ary-services-logo-light.png.asset.json";
 
 const links = [
   { label: "Home", href: "#home" },
