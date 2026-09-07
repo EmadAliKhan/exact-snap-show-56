@@ -208,6 +208,7 @@ export const partners = [
   {
     initials: "AN",
     name: "ARY News",
+    featured: false,
     category: "News & Current Affairs",
     description:
       "One of Pakistan's most trusted 24/7 news channels delivering breaking news, politics, business, and live coverage.",
@@ -216,6 +217,7 @@ export const partners = [
   {
     initials: "AS",
     name: "A Sports",
+    featured: false,
     category: "Sports Broadcasting",
     description:
       "Pakistan's dedicated sports channel offering live cricket, football, and major international sporting events.",
@@ -224,6 +226,7 @@ export const partners = [
   {
     initials: "SR",
     name: "SpeedRemit",
+    featured: false,
     category: "Money Transfer",
     description:
       "Fast, secure international money transfer and remittance services with competitive exchange rates across the globe.",
@@ -232,6 +235,7 @@ export const partners = [
   {
     initials: "SB",
     name: "Sahulat Bazar PK",
+    featured: false,
     category: "E-Commerce",
     description:
       "Pakistan's growing online marketplace and shopping platform offering a wide range of products at competitive prices.",
@@ -240,6 +244,7 @@ export const partners = [
   {
     initials: "SU",
     name: "Sahulat Bazar UAE",
+    featured: false,
     category: "E-Commerce",
     description:
       "ARY's online shopping marketplace serving the UAE market with convenient product delivery and secure payments.",
@@ -248,6 +253,7 @@ export const partners = [
   {
     initials: "SD",
     name: "Stallion Deliveries",
+    featured: false,
     category: "Logistics & Delivery",
     description:
       "Reliable courier and delivery services providing fast, tracked logistics solutions across Pakistan and beyond.",
@@ -256,6 +262,7 @@ export const partners = [
   {
     initials: "SP",
     name: "Sehatmand Pakistan",
+    featured: false,
     category: "Health & Wellness",
     description:
       "ARY Bee Global health platform promoting wellness, quality healthcare products, and healthy living nationwide.",
@@ -264,6 +271,7 @@ export const partners = [
   {
     initials: "AV",
     name: "ARY Vision",
+    featured: false,
     category: "Media & Production",
     description:
       "Creative media and production house crafting engaging digital content and visual storytelling experiences.",
@@ -272,6 +280,7 @@ export const partners = [
   {
     initials: "WMO",
     name: "WMO",
+    featured: false,
     category: "Global Organization",
     description:
       "World Medical Organization providing humanitarian aid, medical relief, and support to communities in need worldwide.",
@@ -280,6 +289,7 @@ export const partners = [
   {
     initials: "AE",
     name: "ARY Exchange",
+    featured: false,
     category: "Financial Services",
     description:
       "Foreign exchange and currency exchange services offering competitive rates and reliable money transfer solutions.",
@@ -288,6 +298,7 @@ export const partners = [
   {
     initials: "AC",
     name: "ARY Chase",
+    featured: false,
     category: "Grocery & Retail",
     description:
       "A leading grocery and retail store by ARY Group, offering quality groceries, household essentials, and everyday products with a seamless in-store and online shopping experience.",
