@@ -310,6 +310,7 @@ export const designServices = [
   {
     icon: "Shapes",
     title: "Logo Design",
+    featured: false,
     description:
       "Memorable, timeless brand marks crafted to capture your company's identity and resonate with your audience for years to come.",
   },
@@ -323,18 +324,21 @@ export const designServices = [
   {
     icon: "Palette",
     title: "Art & Illustration",
+    featured: false,
     description:
       "Custom illustrations, digital art, and creative visuals that add personality and tell your brand story beautifully.",
   },
   {
     icon: "Boxes",
     title: "Industrial & Product Design",
+    featured: false,
     description:
       "User-centric physical product design with CAD modeling, ergonomics, and manufacturability in mind from concept to prototype.",
   },
   {
     icon: "Package",
     title: "Packaging & Label Design",
+    featured: false,
     description:
       "Eye-catching packaging and label designs that stand out on shelves, protect your product, and elevate your brand presence.",
   },
