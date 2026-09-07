@@ -148,7 +148,7 @@ export function Services() {
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 100}>
               {s.featured ? (
-                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
+                <article className="group relative h-full rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Core Service</FeaturedBadge>
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={s.icon} className="h-6 w-6" />
@@ -394,7 +394,7 @@ export function Design() {
           {designServices.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 100}>
               {d.featured ? (
-                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
+                <article className="group relative h-full rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Popular</FeaturedBadge>
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={d.icon} className="h-6 w-6" />
