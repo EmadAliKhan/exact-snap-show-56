@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, Sparkles } from "lucide-react";
 import { CountUp, Icon, Reveal, SectionHeading } from "./primitives";
-import { HeroBackdrop } from "@/components/site/hero-backdrop";
+import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import logo from "@/assets/ary-services-logo-light.png.asset.json";
 import {
   designServices,
@@ -17,8 +17,17 @@ export function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24 text-ink-foreground"
     >
+      <video
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        src={heroVideo.url}
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-ink/55" />
       <div className="grid-bg-dark absolute inset-0 opacity-70" />
-      <HeroBackdrop />
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="animate-blob absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-primary/25 blur-[120px]" />
