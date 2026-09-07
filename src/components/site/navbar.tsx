@@ -32,7 +32,12 @@ export function Navbar() {
           : "border-b border-transparent",
       )}
     >
-      <nav className="container-x flex h-18 items-center justify-between py-4">
+      <nav
+        className={cn(
+          "container-x flex items-center justify-between transition-all duration-300",
+          scrolled ? "h-16" : "h-20",
+        )}
+      >
         <a
           href="#home"
           className="group flex items-center gap-3"
@@ -50,16 +55,17 @@ export function Navbar() {
               key={l.label}
               href={l.href}
               className={cn(
-                "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                "group relative rounded-full px-4 py-2 text-sm font-medium tracking-tight transition-colors duration-200",
                 "text-white/70 hover:text-white",
               )}
             >
               {l.label}
+              <span className="pointer-events-none absolute inset-x-4 -bottom-0.5 h-px origin-left scale-x-0 bg-[image:var(--grad-brand)] transition-transform duration-200 group-hover:scale-x-100" />
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-3 rounded-full bg-[image:var(--grad-brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.04]"
+            className="ml-3 rounded-full bg-[image:var(--grad-brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_10px_30px_-14px_rgba(0,0,0,0.9)] btn-press focus-ring hover:shadow-[var(--shadow-glow)]"
           >
             Get in Touch
           </a>
@@ -70,7 +76,7 @@ export function Navbar() {
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
           className={cn(
-            "grid h-10 w-10 place-items-center rounded-lg border lg:hidden",
+            "grid h-10 w-10 place-items-center rounded-lg border transition-colors duration-200 hover:border-primary/60 lg:hidden",
             "border-white/20 text-white",
           )}
         >
