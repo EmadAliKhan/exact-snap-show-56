@@ -202,7 +202,13 @@ export function Solutions() {
   );
 }
 
-function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) {
+function MarqueeRow({
+  items,
+  reverse,
+}: {
+  items: readonly { name: string; slug: string }[];
+  reverse?: boolean;
+}) {
   const list = [...items, ...items];
   return (
     <div className="marquee-wrap overflow-hidden">
@@ -212,10 +218,16 @@ function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) 
       >
         {list.map((t, i) => (
           <span
-            key={`${t}-${i}`}
-            className="whitespace-nowrap rounded-full border border-border bg-card/70 px-6 py-3 text-sm font-semibold text-muted-foreground backdrop-blur transition-colors hover:border-primary/50 hover:text-foreground"
+            key={`${t.name}-${i}`}
+            className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-border bg-card/70 px-6 py-3 text-sm font-semibold text-muted-foreground backdrop-blur transition-colors hover:border-primary/50 hover:text-foreground"
           >
-            {t}
+            <img
+              src={`https://cdn.simpleicons.org/${t.slug}`}
+              alt={`${t.name} logo`}
+              loading="lazy"
+              className="h-5 w-5"
+            />
+            {t.name}
           </span>
         ))}
       </div>

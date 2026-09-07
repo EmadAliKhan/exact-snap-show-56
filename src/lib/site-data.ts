@@ -153,25 +153,25 @@ export const solutions = [
 ] as const;
 
 export const techStack = [
-  "React",
-  "Node.js",
-  "Python",
-  "AWS",
-  "Docker",
-  "Vue.js",
-  "Angular",
-  "Azure",
-  "Java",
-  "PHP",
-  "Laravel",
-  "Swift",
-  ".NET",
-  "MongoDB",
-  "SQL Server",
-  "Oracle",
-  "SQLite",
-  "PostgreSQL",
-];
+  { name: "React", slug: "react" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Python", slug: "python" },
+  { name: "AWS", slug: "amazonwebservices" },
+  { name: "Docker", slug: "docker" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "Angular", slug: "angular" },
+  { name: "Azure", slug: "microsoftazure" },
+  { name: "Java", slug: "openjdk" },
+  { name: "PHP", slug: "php" },
+  { name: "Laravel", slug: "laravel" },
+  { name: "Swift", slug: "swift" },
+  { name: ".NET", slug: "dotnet" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "SQL Server", slug: "microsoftsqlserver" },
+  { name: "Oracle", slug: "oracle" },
+  { name: "SQLite", slug: "sqlite" },
+  { name: "PostgreSQL", slug: "postgresql" },
+] as const;
 
 export const partners = [
   {
