@@ -11,16 +11,19 @@ import {
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden pt-24">
-      <div className="grid-bg absolute inset-0 opacity-70" />
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24 text-ink-foreground"
+    >
+      <div className="grid-bg-dark absolute inset-0 opacity-70" />
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="animate-blob absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-primary/18 blur-[120px]" />
+        <div className="animate-blob absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-primary/25 blur-[120px]" />
         <div
-          className="animate-blob absolute -right-24 top-40 h-[32rem] w-[32rem] rounded-full bg-accent/16 blur-[130px]"
+          className="animate-blob absolute -right-24 top-40 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[130px]"
           style={{ animationDelay: "-6s" }}
         />
         <div
-          className="animate-blob absolute bottom-[-10rem] left-1/3 h-[26rem] w-[26rem] rounded-full bg-primary/10 blur-[120px]"
+          className="animate-blob absolute bottom-[-10rem] left-1/3 h-[26rem] w-[26rem] rounded-full bg-primary/15 blur-[120px]"
           style={{ animationDelay: "-11s" }}
         />
       </div>
@@ -29,7 +32,7 @@ export function Hero() {
       <div className="container-x relative z-10 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur">
               <Sparkles className="h-3.5 w-3.5" />
               Enterprise Technology Partner
             </span>
@@ -43,7 +46,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
               ARY Services drives digital transformation by building scalable platforms and
               technology solutions that deliver measurable business outcomes. From media and fintech
               to e-commerce and enterprise systems, we help businesses modernize infrastructure and
@@ -62,7 +65,7 @@ export function Hero() {
               </a>
               <a
                 href="#companies"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-secondary/40 px-7 py-3.5 text-sm font-semibold backdrop-blur transition-all duration-200 hover:scale-[1.04] hover:border-primary/50 hover:bg-secondary sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-200 hover:scale-[1.04] hover:border-primary/60 hover:bg-white/10 sm:w-auto"
               >
                 Explore Our Client
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -367,12 +370,12 @@ export function Leadership() {
 
 export function FinalCta() {
   return (
-    <section id="contact" className="relative overflow-hidden">
-      <div className="grid-bg absolute inset-0 opacity-60" />
+    <section id="contact" className="relative overflow-hidden bg-ink text-ink-foreground">
+      <div className="grid-bg-dark absolute inset-0 opacity-60" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="animate-blob absolute left-1/4 top-0 h-96 w-96 rounded-full bg-primary/18 blur-[120px]" />
+        <div className="animate-blob absolute left-1/4 top-0 h-96 w-96 rounded-full bg-primary/25 blur-[120px]" />
         <div
-          className="animate-blob absolute right-1/4 bottom-0 h-96 w-96 rounded-full bg-accent/16 blur-[120px]"
+          className="animate-blob absolute right-1/4 bottom-0 h-96 w-96 rounded-full bg-primary/20 blur-[120px]"
           style={{ animationDelay: "-8s" }}
         />
       </div>
@@ -384,7 +387,7 @@ export function FinalCta() {
             </h2>
           </Reveal>
           <Reveal delay={120}>
-            <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-6 text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
               Let's turn your vision into a market-leading digital product. Our team of experts is
               ready to craft the perfect solution for your business. Have a query or concern? Feel
               free to email us, we're here to help.
@@ -427,7 +430,7 @@ const anchors: Record<string, string> = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface/40">
+    <footer className="border-t border-white/10 bg-ink text-ink-foreground">
       <div className="container-x grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
@@ -436,7 +439,7 @@ export function Footer() {
             </span>
             <span className="text-base font-semibold">ARY Services</span>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-sm leading-relaxed text-white/60">
             Premium software solutions crafted with years of expertise. We build digital products
             that transform businesses and delight users worldwide.
           </p>
@@ -446,7 +449,7 @@ export function Footer() {
                 key={s}
                 href="#contact"
                 aria-label={s}
-                className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/60 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/60 hover:text-primary"
               >
                 <Icon name={s} className="h-4 w-4" />
               </a>
@@ -461,7 +464,7 @@ export function Footer() {
               <li key={l}>
                 <a
                   href={anchors[l]}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="text-sm text-white/60 transition-colors hover:text-primary"
                 >
                   {l}
                 </a>
@@ -477,7 +480,7 @@ export function Footer() {
               <li key={l}>
                 <a
                   href="#services"
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  className="text-sm text-white/60 transition-colors hover:text-primary"
                 >
                   {l}
                 </a>
@@ -492,7 +495,7 @@ export function Footer() {
             <li>
               <a
                 href="mailto:info@aryservices.com"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-primary"
               >
                 <Mail className="h-4 w-4" /> info@aryservices.com
               </a>
@@ -500,7 +503,7 @@ export function Footer() {
             <li>
               <a
                 href="tel:+923333184189"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-primary"
               >
                 <Phone className="h-4 w-4" /> +92 333 3184189
               </a>
@@ -509,8 +512,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-muted-foreground sm:flex-row">
+      <div className="border-t border-white/10">
+        <div className="container-x flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/50 sm:flex-row">
           <span>© 2026 ARY Services. All rights reserved.</span>
           <span>Crafted with passion</span>
         </div>

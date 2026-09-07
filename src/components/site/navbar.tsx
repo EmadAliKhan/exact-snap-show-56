@@ -26,11 +26,19 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "glass shadow-[0_10px_40px_-24px_rgba(0,0,0,0.9)]" : "border-b border-transparent",
+        scrolled
+          ? "border-b border-border bg-white/80 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+          : "border-b border-transparent",
       )}
     >
       <nav className="container-x flex h-18 items-center justify-between py-4">
-        <a href="#home" className="group flex items-center gap-3">
+        <a
+          href="#home"
+          className={cn(
+            "group flex items-center gap-3",
+            scrolled ? "text-foreground" : "text-white",
+          )}
+        >
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground transition-transform duration-300 group-hover:scale-105">
             AS
           </span>
@@ -42,7 +50,12 @@ export function Navbar() {
             <a
               key={l.label}
               href={l.href}
-              className="relative rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={cn(
+                "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-white/70 hover:text-white",
+              )}
             >
               {l.label}
             </a>
@@ -59,21 +72,34 @@ export function Navbar() {
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-lg border border-border lg:hidden"
+          className={cn(
+            "grid h-10 w-10 place-items-center rounded-lg border lg:hidden",
+            scrolled ? "border-border text-foreground" : "border-white/20 text-white",
+          )}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {open && (
-        <div className="glass lg:hidden">
+        <div
+          className={cn(
+            "lg:hidden",
+            scrolled ? "border-b border-border bg-white/95 backdrop-blur-xl" : "bg-ink/95 backdrop-blur-xl",
+          )}
+        >
           <div className="container-x flex flex-col gap-1 py-4">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                className={cn(
+                  "rounded-lg px-3 py-2.5 text-sm font-medium",
+                  scrolled
+                    ? "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    : "text-white/70 hover:bg-white/5 hover:text-white",
+                )}
               >
                 {l.label}
               </a>
