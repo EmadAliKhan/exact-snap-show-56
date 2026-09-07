@@ -2,12 +2,14 @@ export const services = [
   {
     icon: "Smartphone",
     title: "Mobile App Development",
+    featured: false,
     description:
       "Native and cross-platform mobile applications for iOS and Android using React Native, Flutter, and Swift. We build apps that handle millions of users with buttery-smooth performance and stunning interfaces.",
   },
   {
     icon: "Code2",
     title: "Web Development",
+    featured: false,
     description:
       "Modern, responsive web applications built with React, Vue, dotnet, Angular, and full-stack Node.js or Python backends. From SaaS platforms to enterprise portals — we code it all with pixel-perfect precision.",
   },
@@ -21,18 +23,21 @@ export const services = [
   {
     icon: "BrainCircuit",
     title: "AI & Machine Learning",
+    featured: false,
     description:
       "Intelligent automation, natural language processing, computer vision, and predictive analytics. We integrate cutting-edge ML models into your products to unlock data-driven insights and automation.",
   },
   {
     icon: "PenTool",
     title: "UI/UX Design",
+    featured: false,
     description:
       "User-centered design with Figma prototypes, design systems, wireframes, and conversion-optimized interfaces. We create experiences that delight users and drive business outcomes.",
   },
   {
     icon: "ShieldCheck",
     title: "Cybersecurity",
+    featured: false,
     description:
       "Penetration testing, SOC-as-a-Service, GDPR compliance, and zero-trust architecture. We protect your digital assets, customer data, and infrastructure from evolving cyber threats.",
   },
