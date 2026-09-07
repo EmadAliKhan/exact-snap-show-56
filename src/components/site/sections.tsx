@@ -358,15 +358,28 @@ export function Design() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {designServices.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 100}>
-              <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-primary transition-transform duration-300 group-hover:scale-110">
-                  <Icon name={d.icon} className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {d.description}
-                </p>
-              </article>
+              {d.featured ? (
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Popular</FeaturedBadge>
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={d.icon} className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/70">
+                    {d.description}
+                  </p>
+                </article>
+              ) : (
+                <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={d.icon} className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {d.description}
+                  </p>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
