@@ -258,9 +258,6 @@
 }
 
 @layer base {
-  body {
-    overflow-x: clip;
-  }
   h1 {
     letter-spacing: -0.035em;
   }
