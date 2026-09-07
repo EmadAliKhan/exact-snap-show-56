@@ -44,14 +44,14 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-7 text-balance text-4xl font-bold leading-[1.05] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 text-balance text-[2.4rem] font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
               Powering <span className="text-gradient">Digital Transformation</span> Across
               Industries
             </h1>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-[1.8] text-white/65 sm:text-lg">
               ARY Services drives digital transformation by building scalable platforms and
               technology solutions that deliver measurable business outcomes. From media and fintech
               to e-commerce and enterprise systems, we help businesses modernize infrastructure and
@@ -104,16 +104,16 @@ export function Impact() {
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 100}>
-              <div className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 text-center backdrop-blur">
+              <div className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 text-center shadow-[0_1px_2px_oklch(0%_0_0_/_0.04)] backdrop-blur">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
                   <Icon name={s.icon} className="h-6 w-6" />
                 </div>
-                <div className="mt-5 text-4xl font-bold sm:text-5xl">
+                <div className="mt-6 text-4xl font-bold tracking-tight tabular-nums sm:text-5xl">
                   <span className="text-gradient">
                     <CountUp to={s.value} suffix={s.suffix} />
                   </span>
                 </div>
-                <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   {s.label}
                 </p>
               </div>
@@ -455,7 +455,7 @@ export function Leadership() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {leadership.map((l, i) => (
             <Reveal key={l.name} delay={i * 120}>
-              <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 text-center backdrop-blur">
+              <article className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-8 text-center shadow-[0_1px_2px_oklch(0%_0_0_/_0.04)] backdrop-blur">
                 <div className="mx-auto grid h-24 w-24 place-items-center rounded-full bg-[image:var(--grad-brand)] p-[2px]">
                   <span className="grid h-full w-full place-items-center rounded-full bg-surface-2 text-2xl font-bold text-primary">
                     {l.name
