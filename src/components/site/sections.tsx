@@ -39,14 +39,13 @@ export function Hero() {
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur">
               <Sparkles className="h-3.5 w-3.5" />
-              Enterprise Technology Partner
+              ARY Services
             </span>
           </Reveal>
 
           <Reveal delay={120}>
             <h1 className="mt-7 text-balance text-[2.4rem] font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.4rem]">
-              Powering <span className="text-gradient">Digital Transformation</span> Across
-              Industries
+              Enterprise Technology Partner
             </h1>
           </Reveal>
 
