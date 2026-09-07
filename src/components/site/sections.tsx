@@ -387,10 +387,12 @@ export function Companies() {
 
 export function Design() {
   return (
-    <section id="design" className="section-y relative overflow-hidden">
-      <div className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-primary/10 blur-[130px]" />
+    <section id="design" className="section-dark section-y relative overflow-hidden">
+      <div className="dot-bg-dark pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-primary/20 blur-[130px]" />
       <div className="container-x relative">
         <SectionHeading
+          tone="dark"
           eyebrow="Graphics & Design"
           heading="Design That Inspires"
           subtext="Creative design solutions that bring your brand to life — from striking logos to immersive product experiences."
@@ -399,23 +401,25 @@ export function Design() {
           {designServices.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 100}>
               {d.featured ? (
-                <article className="group relative h-full rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
+                <article className="group relative h-full rounded-2xl border border-t-4 border-white/10 border-t-primary bg-[image:var(--grad-brand)] p-[1px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Popular</FeaturedBadge>
+                  <div className="h-full rounded-2xl bg-ink p-7 text-ink-foreground">
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                      <Icon name={d.icon} className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/70">
+                      {d.description}
+                    </p>
+                  </div>
+                </article>
+              ) : (
+                <article className="card-dark group h-full rounded-2xl p-7 text-ink-foreground">
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={d.icon} className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/70">
-                    {d.description}
-                  </p>
-                </article>
-              ) : (
-                <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-primary transition-transform duration-300 group-hover:scale-110">
-                    <Icon name={d.icon} className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-sm leading-relaxed text-white/65">
                     {d.description}
                   </p>
                 </article>
@@ -425,10 +429,10 @@ export function Design() {
         </div>
 
         <Reveal delay={120}>
-          <div className="glass mt-8 flex flex-col items-center gap-6 rounded-3xl p-10 text-center md:flex-row md:justify-between md:text-left">
+          <div className="mt-8 flex flex-col items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-10 text-center backdrop-blur md:flex-row md:justify-between md:text-left">
             <div>
-              <h3 className="text-2xl font-bold">Let's Design Together</h3>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              <h3 className="text-2xl font-bold text-ink-foreground">Let's Design Together</h3>
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/65">
                 Have a design project in mind? Our creative team is ready to bring your vision to
                 life.
               </p>
@@ -446,6 +450,7 @@ export function Design() {
     </section>
   );
 }
+
 
 export function Leadership() {
   return (
