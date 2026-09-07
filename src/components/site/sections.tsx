@@ -181,10 +181,13 @@ export function Services() {
 
 export function Solutions() {
   return (
-    <section id="solutions" className="section-y relative">
-      <div className="pointer-events-none absolute inset-0 grid-bg opacity-40" />
+    <section id="solutions" className="section-dark section-y relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 grid-bg-dark opacity-50" />
+      <div className="pointer-events-none absolute -left-32 top-24 h-[26rem] w-[26rem] rounded-full bg-primary/15 blur-[130px]" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-[24rem] w-[24rem] rounded-full bg-primary/10 blur-[130px]" />
       <div className="container-x relative">
         <SectionHeading
+          tone="dark"
           eyebrow="Our Solutions"
           heading="Our Suite of Digital Products & Solutions"
           subtext="End-to-end digital solutions tailored for every industry — from fintech to entertainment, we build what scales."
@@ -195,9 +198,38 @@ export function Solutions() {
               {s.featured ? (
                 <a
                   href="#contact"
-                  className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4"
+                  className="group relative flex h-full flex-col rounded-2xl border border-t-4 border-white/10 border-t-primary bg-[image:var(--grad-brand)] p-[1px] shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4"
                 >
                   <FeaturedBadge>Core Solution</FeaturedBadge>
+                  <span className="flex h-full flex-col rounded-2xl bg-ink p-6 text-ink-foreground">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                      <Icon name={s.icon} className="h-5 w-5" />
+                    </span>
+                    <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                    <span className="mt-3 flex flex-wrap gap-1.5">
+                      {s.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="mt-4 block text-sm leading-relaxed text-white/70">
+                      {s.description}
+                    </span>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                      Talk to us
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </span>
+                </a>
+              ) : (
+                <a
+                  href="#contact"
+                  className="card-dark group flex h-full flex-col rounded-2xl p-6 text-ink-foreground"
+                >
                   <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={s.icon} className="h-5 w-5" />
                   </div>
@@ -206,40 +238,13 @@ export function Solutions() {
                     {s.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70"
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/60"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-                  <p className="mt-4 text-sm leading-relaxed text-white/70">
-                    {s.description}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    Talk to us
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </a>
-              ) : (
-                <a
-                  href="#contact"
-                  className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur"
-                >
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
-                    <Icon name={s.icon} className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {s.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-sm leading-relaxed text-white/65">
                     {s.description}
                   </p>
                   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
@@ -255,6 +260,7 @@ export function Solutions() {
     </section>
   );
 }
+
 
 function MarqueeRow({
   items,
