@@ -2,36 +2,42 @@ export const services = [
   {
     icon: "Smartphone",
     title: "Mobile App Development",
+    featured: false,
     description:
       "Native and cross-platform mobile applications for iOS and Android using React Native, Flutter, and Swift. We build apps that handle millions of users with buttery-smooth performance and stunning interfaces.",
   },
   {
     icon: "Code2",
     title: "Web Development",
+    featured: false,
     description:
       "Modern, responsive web applications built with React, Vue, dotnet, Angular, and full-stack Node.js or Python backends. From SaaS platforms to enterprise portals — we code it all with pixel-perfect precision.",
   },
   {
     icon: "Cloud",
     title: "Cloud & DevOps",
+    featured: true,
     description:
       "AWS, Azure, and Google Cloud architecture, CI/CD pipelines, Docker containerization, and Kubernetes orchestration. We build scalable, fault-tolerant infrastructure that grows with your business.",
   },
   {
     icon: "BrainCircuit",
     title: "AI & Machine Learning",
+    featured: false,
     description:
       "Intelligent automation, natural language processing, computer vision, and predictive analytics. We integrate cutting-edge ML models into your products to unlock data-driven insights and automation.",
   },
   {
     icon: "PenTool",
     title: "UI/UX Design",
+    featured: false,
     description:
       "User-centered design with Figma prototypes, design systems, wireframes, and conversion-optimized interfaces. We create experiences that delight users and drive business outcomes.",
   },
   {
     icon: "ShieldCheck",
     title: "Cybersecurity",
+    featured: false,
     description:
       "Penetration testing, SOC-as-a-Service, GDPR compliance, and zero-trust architecture. We protect your digital assets, customer data, and infrastructure from evolving cyber threats.",
   },
@@ -41,6 +47,7 @@ export const solutions = [
   {
     icon: "Landmark",
     title: "Fintech Solution",
+    featured: true,
     tags: ["Digital banking", "Remittance"],
     description:
       "We build secure, compliant fintech platforms with instant payments, smart invoicing, and real-time analytics that scale with your business.",
@@ -48,6 +55,7 @@ export const solutions = [
   {
     icon: "Wallet",
     title: "E-Wallet Solution",
+    featured: false,
     tags: ["Cashless payments", "Money transfers", "Bill payments"],
     description:
       "User-friendly e-wallet apps with top-tier encryption, KYC verification, loyalty rewards, and seamless multi-channel payment integrations.",
@@ -55,6 +63,7 @@ export const solutions = [
   {
     icon: "Clapperboard",
     title: "Production Solutions",
+    featured: false,
     tags: ["Dramas", "Telefilms", "Movies"],
     description:
       "End-to-end production solutions covering dramas, telefilms, and movies with high-quality content creation, seamless production management, and timely delivery across platforms.",
@@ -62,6 +71,7 @@ export const solutions = [
   {
     icon: "Building2",
     title: "Property Tech",
+    featured: false,
     tags: ["Listing portals", "Property management", "Virtual tours"],
     description:
       "Real estate platforms with smart search, map-based filtering, virtual tours, and automated property & tenant management workflows.",
@@ -69,6 +79,7 @@ export const solutions = [
   {
     icon: "ShoppingCart",
     title: "E-Commerce Solutions",
+    featured: false,
     tags: ["Multi-vendor marketplaces", "Secure checkout", "Order tracking"],
     description:
       "Feature-rich online stores with inventory management, AI product recommendations, payment gateways, and logistics integration.",
@@ -76,6 +87,7 @@ export const solutions = [
   {
     icon: "Film",
     title: "Entertainment Solution",
+    featured: false,
     tags: ["Content platforms", "Live streaming", "Media management"],
     description:
       "Engaging entertainment platforms with video streaming, content libraries, subscription billing, and personalized audience engagement.",
@@ -83,6 +95,7 @@ export const solutions = [
   {
     icon: "Users",
     title: "CRM Solutions",
+    featured: false,
     tags: ["Sales pipeline", "Lead management", "Analytics dashboard"],
     description:
       "Custom CRM systems that centralize your customer data, automate follow-ups, and drive higher conversions with detailed sales analytics.",
@@ -90,6 +103,7 @@ export const solutions = [
   {
     icon: "Newspaper",
     title: "News & Digital Publishing",
+    featured: false,
     tags: ["CMS platforms", "Paywall support", "Analytics"],
     description:
       "High-performance news portals and digital publishing tools with real-time content management, monetization, and audience analytics.",
@@ -97,6 +111,7 @@ export const solutions = [
   {
     icon: "UserCog",
     title: "HCM Solution",
+    featured: false,
     tags: ["Payroll", "Attendance", "Performance reviews"],
     description:
       "Complete human capital management platforms for recruitment, payroll, attendance, leaves, and employee performance management.",
@@ -104,6 +119,7 @@ export const solutions = [
   {
     icon: "MonitorPlay",
     title: "Digital Entertainment & OTT",
+    featured: false,
     tags: ["Video-on-demand", "Live TV", "Subscription"],
     description:
       "Enterprise OTT platforms with adaptive streaming, DRM protection, multi-device support, and scalable CDN infrastructure.",
@@ -111,6 +127,7 @@ export const solutions = [
   {
     icon: "Truck",
     title: "Logistics Solutions",
+    featured: false,
     tags: ["Fleet management", "Route optimization", "Live tracking"],
     description:
       "Smart logistics and supply chain platforms with real-time GPS tracking, route optimization, and automated dispatch workflows.",
@@ -118,6 +135,7 @@ export const solutions = [
   {
     icon: "ScanBarcode",
     title: "POS Solution",
+    featured: false,
     tags: ["Billing", "Inventory", "Sales reports"],
     description:
       "Modern POS systems with lightning-fast billing, inventory control, staff management, and real-time sales reporting for retail.",
@@ -125,6 +143,7 @@ export const solutions = [
   {
     icon: "TabletSmartphone",
     title: "Mobile Application Solution",
+    featured: false,
     tags: ["iOS & Android", "Cross-platform", "App store deployment"],
     description:
       "Native and hybrid mobile apps with smooth performance, offline support, push notifications, and full app-store deployment.",
@@ -132,6 +151,7 @@ export const solutions = [
   {
     icon: "BellRing",
     title: "Push Notification Solution",
+    featured: false,
     tags: ["Real-time alerts", "Segmentation", "A/B testing"],
     description:
       "High-deliverability push notification engine with audience segmentation, scheduling, and rich engagement analytics.",
@@ -139,6 +159,7 @@ export const solutions = [
   {
     icon: "Search",
     title: "SEO Services",
+    featured: false,
     tags: ["Keyword research", "On-page SEO", "Link building"],
     description:
       "Results-driven SEO campaigns that boost your search rankings, organic traffic, and conversions with transparent reporting.",
@@ -146,6 +167,7 @@ export const solutions = [
   {
     icon: "Bot",
     title: "AI & Automation",
+    featured: false,
     tags: ["Chatbots", "Predictive analytics", "Workflow automation"],
     description:
       "Implement AI-driven chatbots, predictive analytics, and intelligent workflow automation to cut costs and boost efficiency.",
@@ -177,6 +199,7 @@ export const partners = [
   {
     initials: "AD",
     name: "ARY Digital",
+    featured: true,
     category: "Entertainment & TV",
     description:
       "Pakistan's leading entertainment network delivering premium dramas, shows, and original content to millions of viewers worldwide.",
@@ -185,6 +208,7 @@ export const partners = [
   {
     initials: "AN",
     name: "ARY News",
+    featured: false,
     category: "News & Current Affairs",
     description:
       "One of Pakistan's most trusted 24/7 news channels delivering breaking news, politics, business, and live coverage.",
@@ -193,6 +217,7 @@ export const partners = [
   {
     initials: "AS",
     name: "A Sports",
+    featured: false,
     category: "Sports Broadcasting",
     description:
       "Pakistan's dedicated sports channel offering live cricket, football, and major international sporting events.",
@@ -201,6 +226,7 @@ export const partners = [
   {
     initials: "SR",
     name: "SpeedRemit",
+    featured: false,
     category: "Money Transfer",
     description:
       "Fast, secure international money transfer and remittance services with competitive exchange rates across the globe.",
@@ -209,6 +235,7 @@ export const partners = [
   {
     initials: "SB",
     name: "Sahulat Bazar PK",
+    featured: false,
     category: "E-Commerce",
     description:
       "Pakistan's growing online marketplace and shopping platform offering a wide range of products at competitive prices.",
@@ -217,6 +244,7 @@ export const partners = [
   {
     initials: "SU",
     name: "Sahulat Bazar UAE",
+    featured: false,
     category: "E-Commerce",
     description:
       "ARY's online shopping marketplace serving the UAE market with convenient product delivery and secure payments.",
@@ -225,6 +253,7 @@ export const partners = [
   {
     initials: "SD",
     name: "Stallion Deliveries",
+    featured: false,
     category: "Logistics & Delivery",
     description:
       "Reliable courier and delivery services providing fast, tracked logistics solutions across Pakistan and beyond.",
@@ -233,6 +262,7 @@ export const partners = [
   {
     initials: "SP",
     name: "Sehatmand Pakistan",
+    featured: false,
     category: "Health & Wellness",
     description:
       "ARY Bee Global health platform promoting wellness, quality healthcare products, and healthy living nationwide.",
@@ -241,6 +271,7 @@ export const partners = [
   {
     initials: "AV",
     name: "ARY Vision",
+    featured: false,
     category: "Media & Production",
     description:
       "Creative media and production house crafting engaging digital content and visual storytelling experiences.",
@@ -249,6 +280,7 @@ export const partners = [
   {
     initials: "WMO",
     name: "WMO",
+    featured: false,
     category: "Global Organization",
     description:
       "World Medical Organization providing humanitarian aid, medical relief, and support to communities in need worldwide.",
@@ -257,6 +289,7 @@ export const partners = [
   {
     initials: "AE",
     name: "ARY Exchange",
+    featured: false,
     category: "Financial Services",
     description:
       "Foreign exchange and currency exchange services offering competitive rates and reliable money transfer solutions.",
@@ -265,6 +298,7 @@ export const partners = [
   {
     initials: "AC",
     name: "ARY Chase",
+    featured: false,
     category: "Grocery & Retail",
     description:
       "A leading grocery and retail store by ARY Group, offering quality groceries, household essentials, and everyday products with a seamless in-store and online shopping experience.",
@@ -276,30 +310,35 @@ export const designServices = [
   {
     icon: "Shapes",
     title: "Logo Design",
+    featured: false,
     description:
       "Memorable, timeless brand marks crafted to capture your company's identity and resonate with your audience for years to come.",
   },
   {
     icon: "LayoutDashboard",
     title: "App Design",
+    featured: true,
     description:
       "Intuitive, pixel-perfect mobile and web app interfaces designed around user behavior to maximize engagement and conversion.",
   },
   {
     icon: "Palette",
     title: "Art & Illustration",
+    featured: false,
     description:
       "Custom illustrations, digital art, and creative visuals that add personality and tell your brand story beautifully.",
   },
   {
     icon: "Boxes",
     title: "Industrial & Product Design",
+    featured: false,
     description:
       "User-centric physical product design with CAD modeling, ergonomics, and manufacturability in mind from concept to prototype.",
   },
   {
     icon: "Package",
     title: "Packaging & Label Design",
+    featured: false,
     description:
       "Eye-catching packaging and label designs that stand out on shelves, protect your product, and elevate your brand presence.",
   },

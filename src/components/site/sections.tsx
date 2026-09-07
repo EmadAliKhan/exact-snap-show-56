@@ -123,6 +123,14 @@ export function Impact() {
   );
 }
 
+function FeaturedBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
+      {children}
+    </span>
+  );
+}
+
 export function Services() {
   return (
     <section id="services" className="section-y relative">
@@ -135,18 +143,31 @@ export function Services() {
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 100}>
-              <article className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
-                <div className="absolute inset-x-0 -top-24 h-40 bg-[image:var(--grad-brand)] opacity-0 blur-[70px] transition-opacity duration-300 group-hover:opacity-25" />
-                <div className="relative">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+              {s.featured ? (
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Core Service</FeaturedBadge>
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={s.icon} className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-sm leading-relaxed text-white/70">
                     {s.description}
                   </p>
-                </div>
-              </article>
+                </article>
+              ) : (
+                <article className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
+                  <div className="absolute inset-x-0 -top-24 h-40 bg-[image:var(--grad-brand)] opacity-0 blur-[70px] transition-opacity duration-300 group-hover:opacity-25" />
+                  <div className="relative">
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+                      <Icon name={s.icon} className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {s.description}
+                    </p>
+                  </div>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
@@ -168,32 +189,62 @@ export function Solutions() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map((s, i) => (
             <Reveal key={s.title} delay={(i % 4) * 80}>
-              <a
-                href="#contact"
-                className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur"
-              >
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
-                  <Icon name={s.icon} className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {s.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {s.description}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  Talk to us
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </a>
+              {s.featured ? (
+                <a
+                  href="#contact"
+                  className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4"
+                >
+                  <FeaturedBadge>Core Solution</FeaturedBadge>
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={s.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-white/70"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-white/70">
+                    {s.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    Talk to us
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              ) : (
+                <a
+                  href="#contact"
+                  className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur"
+                >
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={s.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold">{s.title}</h3>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-border bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {s.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    Talk to us
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              )}
             </Reveal>
           ))}
         </div>
@@ -262,31 +313,60 @@ export function Companies() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {partners.map((p, i) => (
             <Reveal key={p.name} delay={(i % 3) * 100}>
-              <article className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur">
-                <div className="flex items-center gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
-                    {p.initials}
-                  </span>
-                  <div>
-                    <h3 className="text-base font-semibold">{p.name}</h3>
-                    <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                      {p.category}
+              {p.featured ? (
+                <article className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Flagship Partner</FeaturedBadge>
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
+                      {p.initials}
                     </span>
+                    <div>
+                      <h3 className="text-base font-semibold">{p.name}</h3>
+                      <span className="text-xs font-medium uppercase tracking-wider text-primary">
+                        {p.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {p.description}
-                </p>
-                <a
-                  href={`https://${p.site}`}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
-                >
-                  Visit Website
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-              </article>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70">
+                    {p.description}
+                  </p>
+                  <a
+                    href={`https://${p.site}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    Visit Website
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                </article>
+              ) : (
+                <article className="card-lift group flex h-full flex-col rounded-2xl border border-border bg-card/70 p-6 backdrop-blur">
+                  <div className="flex items-center gap-4">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
+                      {p.initials}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-semibold">{p.name}</h3>
+                      <span className="text-xs font-medium uppercase tracking-wider text-primary">
+                        {p.category}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {p.description}
+                  </p>
+                  <a
+                    href={`https://${p.site}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    Visit Website
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
@@ -307,15 +387,28 @@ export function Design() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {designServices.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 100}>
-              <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-primary transition-transform duration-300 group-hover:scale-110">
-                  <Icon name={d.icon} className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {d.description}
-                </p>
-              </article>
+              {d.featured ? (
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Popular</FeaturedBadge>
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={d.icon} className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/70">
+                    {d.description}
+                  </p>
+                </article>
+              ) : (
+                <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={d.icon} className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {d.description}
+                  </p>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
