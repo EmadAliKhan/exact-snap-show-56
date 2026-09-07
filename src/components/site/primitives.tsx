@@ -63,12 +63,15 @@ export function SectionHeading({
   heading,
   subtext,
   align = "center",
+  tone = "light",
 }: {
   eyebrow: string;
   heading: string;
   subtext: string;
   align?: "center" | "left";
+  tone?: "light" | "dark";
 }) {
+  const dark = tone === "dark";
   return (
     <div
       className={cn(
@@ -77,7 +80,14 @@ export function SectionHeading({
       )}
     >
       <Reveal>
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+        <span
+          className={cn(
+            "inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-primary",
+            dark
+              ? "border border-white/15 bg-white/5 backdrop-blur"
+              : "border border-border bg-secondary/60",
+          )}
+        >
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           {eyebrow}
         </span>
@@ -88,13 +98,19 @@ export function SectionHeading({
         </h2>
       </Reveal>
       <Reveal delay={170}>
-        <p className="mt-5 text-pretty text-base leading-[1.75] text-muted-foreground sm:text-[1.0625rem]">
+        <p
+          className={cn(
+            "mt-5 text-pretty text-base leading-[1.75] sm:text-[1.0625rem]",
+            dark ? "text-white/65" : "text-muted-foreground",
+          )}
+        >
           {subtext}
         </p>
       </Reveal>
     </div>
   );
 }
+
 
 export function CountUp({
   to,
