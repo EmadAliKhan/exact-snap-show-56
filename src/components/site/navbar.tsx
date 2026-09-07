@@ -104,7 +104,7 @@ export function Navbar() {
         <div
           className={cn(
             "lg:hidden",
-            "border-b border-white/10 bg-ink/95 backdrop-blur-xl",
+            "max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-white/10 bg-ink/95 backdrop-blur-xl",
           )}
         >
           <div className="container-x flex flex-col gap-1 py-4">
@@ -114,16 +114,24 @@ export function Navbar() {
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-3 py-2.5 text-sm font-medium",
-                  "text-white/70 hover:bg-white/5 hover:text-white",
+                  "rounded-lg px-3 py-3 text-base font-medium",
+                  "text-white/75 hover:bg-white/5 hover:text-white active:bg-white/10",
                 )}
               >
                 {l.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-[image:var(--grad-brand)] px-5 py-3 text-center text-sm font-semibold text-primary-foreground focus-ring"
+            >
+              Get in Touch
+            </a>
           </div>
         </div>
       )}
+
     </header>
   );
 }
