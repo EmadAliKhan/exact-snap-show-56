@@ -40,36 +40,36 @@
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(11.5% 0.004 60);
-  --foreground: oklch(97% 0 0);
-  --surface: oklch(15% 0.005 60);
-  --surface-2: oklch(19% 0.006 60);
-  --card: oklch(15.5% 0.005 60);
-  --card-foreground: oklch(97% 0 0);
-  --popover: oklch(15.5% 0.005 60);
-  --popover-foreground: oklch(97% 0 0);
+  --background: oklch(99% 0.002 60);
+  --foreground: oklch(16% 0.006 60);
+  --surface: oklch(98% 0.003 60);
+  --surface-2: oklch(95.5% 0.004 60);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(16% 0.006 60);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(16% 0.006 60);
   --primary: oklch(70.6% 0.171 51.5);
   --primary-glow: oklch(78% 0.16 65);
-  --primary-foreground: oklch(13% 0.01 60);
+  --primary-foreground: oklch(99% 0 0);
   --ink: oklch(8.5% 0.004 60);
   --ink-foreground: oklch(98% 0 0);
-  --secondary: oklch(19% 0.006 60);
-  --secondary-foreground: oklch(97% 0 0);
-  --muted: oklch(19% 0.006 60);
-  --muted-foreground: oklch(72% 0.008 60);
+  --secondary: oklch(95.5% 0.004 60);
+  --secondary-foreground: oklch(22% 0.006 60);
+  --muted: oklch(96.5% 0.003 60);
+  --muted-foreground: oklch(46% 0.01 60);
   --accent: oklch(70.6% 0.171 51.5);
-  --accent-foreground: oklch(13% 0.01 60);
+  --accent-foreground: oklch(99% 0 0);
   --destructive: oklch(60% 0.22 25);
   --destructive-foreground: oklch(99% 0 0);
-  --border: oklch(100% 0 0 / 10%);
-  --input: oklch(100% 0 0 / 14%);
+  --border: oklch(10% 0 0 / 10%);
+  --input: oklch(10% 0 0 / 14%);
   --ring: oklch(70.6% 0.171 51.5 / 55%);
   --grad-brand: linear-gradient(
     100deg,
     oklch(70.6% 0.171 51.5) 0%,
     oklch(78% 0.16 65) 100%
   );
-  --shadow-lift: 0 24px 60px -30px oklch(0% 0 0 / 0.85);
+  --shadow-lift: 0 24px 60px -30px oklch(0% 0 0 / 0.35);
   --shadow-glow: 0 0 0 1px oklch(70.6% 0.171 51.5 / 0.4), 0 26px 60px -24px oklch(70.6% 0.171 51.5 / 0.45);
 }
 
@@ -138,8 +138,8 @@
 
 @utility grid-bg {
   background-image:
-    linear-gradient(to right, oklch(100% 0 0 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(100% 0 0 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, oklch(10% 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(10% 0 0 / 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
