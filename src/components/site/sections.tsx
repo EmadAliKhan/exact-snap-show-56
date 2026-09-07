@@ -17,6 +17,8 @@ export function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24 text-ink-foreground"
     >
       <div className="grid-bg-dark absolute inset-0 opacity-70" />
+      <HeroBackground />
+
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="animate-blob absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-primary/25 blur-[120px]" />
         <div
