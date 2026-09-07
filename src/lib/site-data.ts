@@ -42,6 +42,7 @@ export const solutions = [
   {
     icon: "Landmark",
     title: "Fintech Solution",
+    featured: true,
     tags: ["Digital banking", "Remittance"],
     description:
       "We build secure, compliant fintech platforms with instant payments, smart invoicing, and real-time analytics that scale with your business.",
