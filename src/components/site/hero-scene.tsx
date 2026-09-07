@@ -107,7 +107,7 @@ export function HeroScene({ onUnavailable }: { onUnavailable?: () => void }) {
       const linkMat = new THREE.LineBasicMaterial({
         color: ACCENT,
         transparent: true,
-        opacity: 0.16,
+        opacity: 0.10,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
       });
@@ -143,7 +143,7 @@ export function HeroScene({ onUnavailable }: { onUnavailable?: () => void }) {
           color: ACCENT,
           wireframe: true,
           transparent: true,
-          opacity: 0.13,
+          opacity: 0.10,
           depthWrite: false,
         });
         const mesh = new THREE.Mesh(geo, mat);
@@ -202,7 +202,7 @@ export function HeroScene({ onUnavailable }: { onUnavailable?: () => void }) {
           if (Math.abs(arr[ix + 2]!) > SPREAD_Z / 2) vel[ix + 2] = -vel[ix + 2]!;
         }
         nodeAttr.needsUpdate = true;
-        nodeMat.opacity = 0.7 + Math.sin(t * 0.8) * 0.15;
+        nodeMat.opacity = 0.55 + Math.sin(t * 0.8) * 0.12;
 
         // rebuild links
         let n = 0;
@@ -225,7 +225,7 @@ export function HeroScene({ onUnavailable }: { onUnavailable?: () => void }) {
         }
         linkGeo.setDrawRange(0, n * 2);
         linkAttr.needsUpdate = true;
-        linkMat.opacity = 0.12 + Math.sin(t * 0.6) * 0.05;
+        linkMat.opacity = 0.075 + Math.sin(t * 0.6) * 0.03;
 
         for (const s of solids) {
           s.mesh.rotation.x += s.sx;
@@ -272,7 +272,7 @@ export function HeroScene({ onUnavailable }: { onUnavailable?: () => void }) {
     <div
       ref={hostRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-90"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-70"
     />
   );
 }
