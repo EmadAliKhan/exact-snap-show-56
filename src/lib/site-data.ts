@@ -284,6 +284,7 @@ export const designServices = [
   {
     icon: "LayoutDashboard",
     title: "App Design",
+    featured: true,
     description:
       "Intuitive, pixel-perfect mobile and web app interfaces designed around user behavior to maximize engagement and conversion.",
   },
