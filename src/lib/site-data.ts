@@ -179,6 +179,7 @@ export const partners = [
   {
     initials: "AD",
     name: "ARY Digital",
+    featured: true,
     category: "Entertainment & TV",
     description:
       "Pakistan's leading entertainment network delivering premium dramas, shows, and original content to millions of viewers worldwide.",
