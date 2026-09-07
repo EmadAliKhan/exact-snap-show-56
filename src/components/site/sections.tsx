@@ -123,6 +123,14 @@ export function Impact() {
   );
 }
 
+function FeaturedBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
+      {children}
+    </span>
+  );
+}
+
 export function Services() {
   return (
     <section id="services" className="section-y relative">
@@ -135,18 +143,31 @@ export function Services() {
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 100}>
-              <article className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
-                <div className="absolute inset-x-0 -top-24 h-40 bg-[image:var(--grad-brand)] opacity-0 blur-[70px] transition-opacity duration-300 group-hover:opacity-25" />
-                <div className="relative">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+              {s.featured ? (
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                  <FeaturedBadge>Core Service</FeaturedBadge>
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={s.icon} className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-sm leading-relaxed text-white/70">
                     {s.description}
                   </p>
-                </div>
-              </article>
+                </article>
+              ) : (
+                <article className="card-lift group relative h-full overflow-hidden rounded-2xl border border-border bg-card/70 p-7 backdrop-blur">
+                  <div className="absolute inset-x-0 -top-24 h-40 bg-[image:var(--grad-brand)] opacity-0 blur-[70px] transition-opacity duration-300 group-hover:opacity-25" />
+                  <div className="relative">
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/12 text-primary transition-transform duration-300 group-hover:scale-110">
+                      <Icon name={s.icon} className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold">{s.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {s.description}
+                    </p>
+                  </div>
+                </article>
+              )}
             </Reveal>
           ))}
         </div>
