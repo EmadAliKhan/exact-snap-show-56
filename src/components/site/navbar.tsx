@@ -92,7 +92,7 @@ export function Navbar() {
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
           className={cn(
-            "grid h-10 w-10 place-items-center rounded-lg border transition-colors duration-200 hover:border-primary/60 lg:hidden",
+            "grid h-11 w-11 place-items-center rounded-lg border transition-colors duration-200 hover:border-primary/60 lg:hidden",
             "border-white/20 text-white",
           )}
         >
