@@ -55,6 +55,7 @@ export const solutions = [
   {
     icon: "Wallet",
     title: "E-Wallet Solution",
+    featured: false,
     tags: ["Cashless payments", "Money transfers", "Bill payments"],
     description:
       "User-friendly e-wallet apps with top-tier encryption, KYC verification, loyalty rewards, and seamless multi-channel payment integrations.",
@@ -62,6 +63,7 @@ export const solutions = [
   {
     icon: "Clapperboard",
     title: "Production Solutions",
+    featured: false,
     tags: ["Dramas", "Telefilms", "Movies"],
     description:
       "End-to-end production solutions covering dramas, telefilms, and movies with high-quality content creation, seamless production management, and timely delivery across platforms.",
@@ -69,6 +71,7 @@ export const solutions = [
   {
     icon: "Building2",
     title: "Property Tech",
+    featured: false,
     tags: ["Listing portals", "Property management", "Virtual tours"],
     description:
       "Real estate platforms with smart search, map-based filtering, virtual tours, and automated property & tenant management workflows.",
@@ -76,6 +79,7 @@ export const solutions = [
   {
     icon: "ShoppingCart",
     title: "E-Commerce Solutions",
+    featured: false,
     tags: ["Multi-vendor marketplaces", "Secure checkout", "Order tracking"],
     description:
       "Feature-rich online stores with inventory management, AI product recommendations, payment gateways, and logistics integration.",
@@ -83,6 +87,7 @@ export const solutions = [
   {
     icon: "Film",
     title: "Entertainment Solution",
+    featured: false,
     tags: ["Content platforms", "Live streaming", "Media management"],
     description:
       "Engaging entertainment platforms with video streaming, content libraries, subscription billing, and personalized audience engagement.",
@@ -90,6 +95,7 @@ export const solutions = [
   {
     icon: "Users",
     title: "CRM Solutions",
+    featured: false,
     tags: ["Sales pipeline", "Lead management", "Analytics dashboard"],
     description:
       "Custom CRM systems that centralize your customer data, automate follow-ups, and drive higher conversions with detailed sales analytics.",
@@ -97,6 +103,7 @@ export const solutions = [
   {
     icon: "Newspaper",
     title: "News & Digital Publishing",
+    featured: false,
     tags: ["CMS platforms", "Paywall support", "Analytics"],
     description:
       "High-performance news portals and digital publishing tools with real-time content management, monetization, and audience analytics.",
@@ -104,6 +111,7 @@ export const solutions = [
   {
     icon: "UserCog",
     title: "HCM Solution",
+    featured: false,
     tags: ["Payroll", "Attendance", "Performance reviews"],
     description:
       "Complete human capital management platforms for recruitment, payroll, attendance, leaves, and employee performance management.",
@@ -111,6 +119,7 @@ export const solutions = [
   {
     icon: "MonitorPlay",
     title: "Digital Entertainment & OTT",
+    featured: false,
     tags: ["Video-on-demand", "Live TV", "Subscription"],
     description:
       "Enterprise OTT platforms with adaptive streaming, DRM protection, multi-device support, and scalable CDN infrastructure.",
@@ -118,6 +127,7 @@ export const solutions = [
   {
     icon: "Truck",
     title: "Logistics Solutions",
+    featured: false,
     tags: ["Fleet management", "Route optimization", "Live tracking"],
     description:
       "Smart logistics and supply chain platforms with real-time GPS tracking, route optimization, and automated dispatch workflows.",
@@ -125,6 +135,7 @@ export const solutions = [
   {
     icon: "ScanBarcode",
     title: "POS Solution",
+    featured: false,
     tags: ["Billing", "Inventory", "Sales reports"],
     description:
       "Modern POS systems with lightning-fast billing, inventory control, staff management, and real-time sales reporting for retail.",
@@ -132,6 +143,7 @@ export const solutions = [
   {
     icon: "TabletSmartphone",
     title: "Mobile Application Solution",
+    featured: false,
     tags: ["iOS & Android", "Cross-platform", "App store deployment"],
     description:
       "Native and hybrid mobile apps with smooth performance, offline support, push notifications, and full app-store deployment.",
@@ -139,6 +151,7 @@ export const solutions = [
   {
     icon: "BellRing",
     title: "Push Notification Solution",
+    featured: false,
     tags: ["Real-time alerts", "Segmentation", "A/B testing"],
     description:
       "High-deliverability push notification engine with audience segmentation, scheduling, and rich engagement analytics.",
@@ -146,6 +159,7 @@ export const solutions = [
   {
     icon: "Search",
     title: "SEO Services",
+    featured: false,
     tags: ["Keyword research", "On-page SEO", "Link building"],
     description:
       "Results-driven SEO campaigns that boost your search rankings, organic traffic, and conversions with transparent reporting.",
@@ -153,6 +167,7 @@ export const solutions = [
   {
     icon: "Bot",
     title: "AI & Automation",
+    featured: false,
     tags: ["Chatbots", "Predictive analytics", "Workflow automation"],
     description:
       "Implement AI-driven chatbots, predictive analytics, and intelligent workflow automation to cut costs and boost efficiency.",
