@@ -206,7 +206,7 @@ function MarqueeRow({
   items,
   reverse,
 }: {
-  items: readonly { name: string; slug: string }[];
+  items: readonly { name: string; slug?: string; icon?: string; color?: string }[];
   reverse?: boolean;
 }) {
   const list = [...items, ...items];
@@ -221,12 +221,16 @@ function MarqueeRow({
             key={`${t.name}-${i}`}
             className="inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-border bg-card/70 px-6 py-3 text-sm font-semibold text-muted-foreground backdrop-blur transition-colors hover:border-primary/50 hover:text-foreground"
           >
-            <img
-              src={`https://cdn.simpleicons.org/${t.slug}`}
-              alt={`${t.name} logo`}
-              loading="lazy"
-              className="h-5 w-5"
-            />
+            {"slug" in t && t.slug ? (
+              <img
+                src={`https://cdn.simpleicons.org/${t.slug}${"color" in t && t.color ? `/${t.color}` : ""}`}
+                alt={`${t.name} logo`}
+                loading="lazy"
+                className="h-5 w-5"
+              />
+            ) : (
+              <Icon name={"icon" in t && t.icon ? t.icon : "Code2"} className="h-5 w-5 text-primary" />
+            )}
             {t.name}
           </span>
         ))}
