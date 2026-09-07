@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/ary-services-logo-light.png.asset.json";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -27,22 +28,20 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border bg-white/80 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+          ? "border-b border-white/10 bg-ink/75 shadow-[0_18px_50px_-30px_rgba(0,0,0,0.9)] backdrop-blur-xl"
           : "border-b border-transparent",
       )}
     >
       <nav className="container-x flex h-18 items-center justify-between py-4">
         <a
           href="#home"
-          className={cn(
-            "group flex items-center gap-3",
-            scrolled ? "text-foreground" : "text-white",
-          )}
+          className="group flex items-center gap-3"
         >
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground transition-transform duration-300 group-hover:scale-105">
-            AS
-          </span>
-          <span className="text-base font-semibold tracking-tight">ARY Services</span>
+          <img
+            src={logo.url}
+            alt="ARY Services"
+            className="h-8 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-9"
+          />
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -52,9 +51,7 @@ export function Navbar() {
               href={l.href}
               className={cn(
                 "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                scrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/70 hover:text-white",
+                "text-white/70 hover:text-white",
               )}
             >
               {l.label}
@@ -74,7 +71,7 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className={cn(
             "grid h-10 w-10 place-items-center rounded-lg border lg:hidden",
-            scrolled ? "border-border text-foreground" : "border-white/20 text-white",
+            "border-white/20 text-white",
           )}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -85,7 +82,7 @@ export function Navbar() {
         <div
           className={cn(
             "lg:hidden",
-            scrolled ? "border-b border-border bg-white/95 backdrop-blur-xl" : "bg-ink/95 backdrop-blur-xl",
+            "border-b border-white/10 bg-ink/95 backdrop-blur-xl",
           )}
         >
           <div className="container-x flex flex-col gap-1 py-4">
@@ -96,9 +93,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "rounded-lg px-3 py-2.5 text-sm font-medium",
-                  scrolled
-                    ? "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                    : "text-white/70 hover:bg-white/5 hover:text-white",
+                  "text-white/70 hover:bg-white/5 hover:text-white",
                 )}
               >
                 {l.label}

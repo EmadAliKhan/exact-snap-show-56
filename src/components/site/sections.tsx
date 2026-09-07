@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, Sparkles } from "lucide-react";
 import { CountUp, Icon, Reveal, SectionHeading } from "./primitives";
+import logo from "@/assets/ary-services-logo-light.png.asset.json";
 import {
   designServices,
   leadership,
@@ -27,6 +28,7 @@ export function Hero() {
           style={{ animationDelay: "-11s" }}
         />
       </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.75)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
 
       <div className="container-x relative z-10 py-20">
@@ -433,12 +435,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-ink text-ink-foreground">
       <div className="container-x grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
-              AS
-            </span>
-            <span className="text-base font-semibold">ARY Services</span>
-          </div>
+          <img src={logo.url} alt="ARY Services" className="h-9 w-auto" />
           <p className="mt-4 text-sm leading-relaxed text-white/60">
             Premium software solutions crafted with years of expertise. We build digital products
             that transform businesses and delight users worldwide.
