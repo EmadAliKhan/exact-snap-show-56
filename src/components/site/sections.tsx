@@ -301,8 +301,9 @@ function MarqueeRow({
 
 export function TechMarquee() {
   return (
-    <section className="relative overflow-hidden py-14">
+    <section className="relative overflow-hidden border-y border-border bg-background py-14">
       <div className="relative space-y-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+
         <MarqueeRow items={techStack} />
         <MarqueeRow items={[...techStack].reverse()} reverse />
       </div>
@@ -454,8 +455,9 @@ export function Design() {
 
 export function Leadership() {
   return (
-    <section id="leadership" className="section-y relative overflow-hidden">
-      <div className="grid-bg pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
+    <section id="leadership" className="section-warm section-y relative overflow-hidden">
+      <div className="grid-bg pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
+
       <div className="container-x relative">
         <SectionHeading
           eyebrow="Leadership"
