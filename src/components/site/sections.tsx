@@ -63,14 +63,14 @@ export function Hero() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#solutions"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] transition-all duration-200 hover:scale-[1.04] hover:shadow-[var(--shadow-glow)] sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_18px_40px_-18px_rgba(0,0,0,0.9)] btn-press focus-ring transition-all duration-200 hover:shadow-[var(--shadow-glow)] sm:w-auto"
               >
                 Explore Our Work
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#companies"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-200 hover:scale-[1.04] hover:border-primary/60 hover:bg-white/10 sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur btn-press focus-ring transition-all duration-200 hover:border-primary/60 hover:bg-white/10 sm:w-auto"
               >
                 Explore Our Client
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -92,14 +92,16 @@ const stats = [
 
 export function Impact() {
   return (
-    <section id="impact" className="section-y relative">
-      <div className="container-x">
+    <section id="impact" className="section-y relative overflow-hidden">
+      <div className="dot-bg pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[46rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
+      <div className="container-x relative">
         <SectionHeading
           eyebrow="Our Impact"
           heading="Numbers That Speak"
           subtext="Two decades of building digital products that transform industries and drive measurable results."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 100}>
               <div className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 text-center backdrop-blur">
@@ -133,18 +135,20 @@ function FeaturedBadge({ children }: { children: React.ReactNode }) {
 
 export function Services() {
   return (
-    <section id="services" className="section-y relative">
-      <div className="container-x">
+    <section id="services" className="section-alt section-y relative overflow-hidden">
+      <div className="circuit-accent pointer-events-none absolute -right-24 top-10 h-[26rem] w-[26rem] opacity-40" />
+      <div className="circuit-accent pointer-events-none absolute -left-24 bottom-10 h-[22rem] w-[22rem] opacity-30" />
+      <div className="container-x relative">
         <SectionHeading
           eyebrow="Our Services"
           heading="What We Build"
           subtext="From concept to deployment — we provide end-to-end digital solutions engineered to scale your business."
         />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 100}>
               {s.featured ? (
-                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Core Service</FeaturedBadge>
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={s.icon} className="h-6 w-6" />
@@ -186,13 +190,13 @@ export function Solutions() {
           heading="Our Suite of Digital Products & Solutions"
           subtext="End-to-end digital solutions tailored for every industry — from fintech to entertainment, we build what scales."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map((s, i) => (
             <Reveal key={s.title} delay={(i % 4) * 80}>
               {s.featured ? (
                 <a
                   href="#contact"
-                  className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4"
+                  className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4"
                 >
                   <FeaturedBadge>Core Solution</FeaturedBadge>
                   <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
@@ -303,18 +307,19 @@ export function TechMarquee() {
 
 export function Companies() {
   return (
-    <section id="companies" className="section-y">
-      <div className="container-x">
+    <section id="companies" className="section-alt section-y relative overflow-hidden">
+      <div className="dot-bg pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      <div className="container-x relative">
         <SectionHeading
           eyebrow="Our Partners"
           heading="Companies We Work With"
           subtext="Trusted by leading brands and innovative startups across the globe to deliver exceptional digital experiences."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {partners.map((p, i) => (
             <Reveal key={p.name} delay={(i % 3) * 100}>
               {p.featured ? (
-                <article className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                <article className="group relative flex h-full flex-col rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-6 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Flagship Partner</FeaturedBadge>
                   <div className="flex items-center gap-4">
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[image:var(--grad-brand)] text-sm font-bold text-primary-foreground">
@@ -377,18 +382,19 @@ export function Companies() {
 
 export function Design() {
   return (
-    <section id="design" className="section-y">
-      <div className="container-x">
+    <section id="design" className="section-y relative overflow-hidden">
+      <div className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-primary/10 blur-[130px]" />
+      <div className="container-x relative">
         <SectionHeading
           eyebrow="Graphics & Design"
           heading="Design That Inspires"
           subtext="Creative design solutions that bring your brand to life — from striking logos to immersive product experiences."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {designServices.map((d, i) => (
             <Reveal key={d.title} delay={(i % 3) * 100}>
               {d.featured ? (
-                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 md:-translate-y-4">
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-border border-t-4 border-t-primary bg-ink p-7 text-ink-foreground shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-glow)] md:-translate-y-4">
                   <FeaturedBadge>Popular</FeaturedBadge>
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
                     <Icon name={d.icon} className="h-6 w-6" />
@@ -424,7 +430,7 @@ export function Design() {
             </div>
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.04]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-7 py-3.5 text-sm font-semibold text-primary-foreground btn-press focus-ring"
             >
               Start a Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -438,14 +444,15 @@ export function Design() {
 
 export function Leadership() {
   return (
-    <section id="leadership" className="section-y">
-      <div className="container-x">
+    <section id="leadership" className="section-y relative overflow-hidden">
+      <div className="grid-bg pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_72%)]" />
+      <div className="container-x relative">
         <SectionHeading
           eyebrow="Leadership"
           heading="Meet Our Management"
           subtext="A team of seasoned leaders driving innovation and excellence with decades of combined experience."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {leadership.map((l, i) => (
             <Reveal key={l.name} delay={i * 120}>
               <article className="card-lift group h-full rounded-2xl border border-border bg-card/70 p-7 text-center backdrop-blur">
@@ -510,7 +517,7 @@ export function FinalCta() {
           <Reveal delay={240}>
             <a
               href="mailto:info@aryservices.com"
-              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-8 py-4 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:scale-[1.04] hover:shadow-[var(--shadow-glow)]"
+              className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[image:var(--grad-brand)] px-8 py-4 text-sm font-semibold text-primary-foreground btn-press focus-ring transition-all duration-200 hover:shadow-[var(--shadow-glow)]"
             >
               <Mail className="h-4 w-4" />
               info@aryservices.com
