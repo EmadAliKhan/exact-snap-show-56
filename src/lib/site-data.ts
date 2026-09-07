@@ -14,6 +14,7 @@ export const services = [
   {
     icon: "Cloud",
     title: "Cloud & DevOps",
+    featured: true,
     description:
       "AWS, Azure, and Google Cloud architecture, CI/CD pipelines, Docker containerization, and Kubernetes orchestration. We build scalable, fault-tolerant infrastructure that grows with your business.",
   },
